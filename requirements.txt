@@ -1,0 +1,4 @@
+flask
+openai
+foundry-local-sdk
+Pillow

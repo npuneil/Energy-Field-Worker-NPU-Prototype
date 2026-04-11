@@ -1,0 +1,52 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║       ZAVA ENERGY – ON-DEVICE AI FOR FIELD OPERATIONS – START HERE       ║
+║         Powered by Microsoft Surface Copilot+ PC & Foundry Local            ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+WELCOME! This demo showcases on-device AI for Zava Energy field worker
+use cases, running entirely on the NPU. No cloud. No API costs.
+Works in airplane mode — perfect for remote pipeline & facility locations.
+
+
+════════════════════════════════════════════════════════════════════════════════
+FIRST TIME SETUP
+════════════════════════════════════════════════════════════════════════════════
+
+  1. Double-click: Setup.bat  (or run Setup.ps1 in PowerShell)
+  2. Wait for dependencies to install (~1-2 minutes)
+  3. Double-click: StartApp.bat
+  4. App opens in your browser at http://localhost:5000
+
+
+════════════════════════════════════════════════════════════════════════════════
+RETURNING USER
+════════════════════════════════════════════════════════════════════════════════
+
+  1. Double-click: StartApp.bat
+  2. App opens in your browser
+  3. Done!
+
+
+════════════════════════════════════════════════════════════════════════════════
+DEMO FEATURES (4 Tabs)
+════════════════════════════════════════════════════════════════════════════════
+
+  TAB 1 – HOME
+  • Overview of on-device AI capabilities for Zava Energy field operations
+  • Value propositions: $0 inference, data sovereignty, offline/remote
+
+  TAB 2 – FIELD INSPECTION AI
+  • Upload/describe pipeline, facility, or wellsite conditions
+  • Get instant AI hazard assessment, risk level, recommended actions
+  • Sample scenarios included for easy demo
+  • Voice dictation for hands-free field reporting
+
+  TAB 3 – OPERATIONS ASSISTANT
+  • Chat with AI about safety procedures, regulations, field ops
+  • Pre-built quick prompts for common questions (CSA Z662, H2S, etc.)
+  • All conversation processed on-device
+
+  TAB 4 – DOCUMENT ANALYZER
+  • Paste inspection reports, permits, SOPs, or regulatory docs
+  • AI summarizes, extracts data, or flags compliance issues
+  • Sample pipeline integrity report included
