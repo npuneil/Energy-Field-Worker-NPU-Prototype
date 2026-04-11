@@ -19,6 +19,8 @@ start "" "http://localhost:5000"
 
 REM ── Start Flask app ──
 echo [Starting] Flask app on http://localhost:5000
+echo [INFO] Foundry Local model loading may take a moment...
+echo [INFO] The browser page will work once the app finishes loading.
 echo [INFO] Close this window to stop the app.
 echo.
 python app.py

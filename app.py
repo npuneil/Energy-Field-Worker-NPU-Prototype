@@ -484,5 +484,6 @@ if __name__ == "__main__":
     print("  Zava Energy – On-Device AI for Field Operations")
     print("  Powered by Microsoft Surface + Foundry Local")
     print("=" * 60)
-    print(f"  Open → http://localhost:5000\n")
+    print(f"  Model loading may take a moment on first run...")
+    print(f"  Once ready, open \u2192 http://localhost:5000\n")
     app.run(host="127.0.0.1", port=5000, debug=False)

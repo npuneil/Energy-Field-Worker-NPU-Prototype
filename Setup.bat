@@ -5,14 +5,31 @@ echo ║   Powered by Microsoft Surface + Foundry Local              ║
 echo ╚══════════════════════════════════════════════════════════════╝
 echo.
 
-REM ── Check for Python ──
+REM ── Resolve Python command ──
+set PYTHON_CMD=
 python --version >nul 2>&1
-if errorlevel 1 (
-    echo [ERROR] Python is not installed or not in PATH.
-    echo         Install Python 3.10+ from https://python.org
-    pause
-    exit /b 1
+if not errorlevel 1 (
+    set PYTHON_CMD=python
+    goto :python_ok
 )
+py -3 --version >nul 2>&1
+if not errorlevel 1 (
+    set PYTHON_CMD=py -3
+    goto :python_ok
+)
+python3 --version >nul 2>&1
+if not errorlevel 1 (
+    set PYTHON_CMD=python3
+    goto :python_ok
+)
+echo [ERROR] Python is not installed or not in PATH.
+echo         Install Python 3.10+ from https://python.org
+echo         Make sure to check "Add Python to PATH" during install.
+pause
+exit /b 1
+
+:python_ok
+echo [OK] Python found: %PYTHON_CMD%
 
 REM ── Check for Foundry Local ──
 foundry --version >nul 2>&1
@@ -27,15 +44,26 @@ if errorlevel 1 (
 )
 
 REM ── Create virtual environment ──
-if not exist ".venv" (
+if not exist ".venv\Scripts\activate.bat" (
     echo [SETUP] Creating Python virtual environment...
-    python -m venv .venv
+    %PYTHON_CMD% -m venv .venv
+    if not exist ".venv\Scripts\activate.bat" (
+        echo [ERROR] Failed to create virtual environment.
+        echo         Try manually: %PYTHON_CMD% -m venv .venv
+        pause
+        exit /b 1
+    )
+    echo [OK] Virtual environment created.
 )
 
 REM ── Activate and install dependencies ──
 echo [SETUP] Installing Python dependencies...
 call .venv\Scripts\activate.bat
 pip install -r requirements.txt --quiet
+if errorlevel 1 (
+    echo [WARN] Some dependencies may have failed to install.
+    echo        Try: pip install -r requirements.txt
+)
 
 echo.
 echo ╔══════════════════════════════════════════════════════════════╗
